@@ -1,16 +1,21 @@
 package org.jboss.examples.ticketmonster.model;
 
 import javax.persistence.Entity;
+
 import java.io.Serializable;
+
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Column;
 import javax.persistence.Version;
+
 import java.lang.Override;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+@SuppressWarnings("serial")
 @Entity
 public class Event implements Serializable
 {
@@ -27,7 +32,7 @@ public class Event implements Serializable
    @NotNull
    @Size(min = 5, max = 50, message = "An event's name must contain between 5 and 50 characters")
    private String name;
-
+   
    @Column
    @Size(min = 20, max = 1000)
    private String description;
